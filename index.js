@@ -9,7 +9,7 @@ const port = 3005;
 const app = express();
 
 const userCtrl = require("./controllers/userCtrl")
-const skillsCtrl = require("./controllers/userCtrl")
+const skillsCtrl = require("./controllers/skillsCtrl")
 
 app.use(json());
 
@@ -39,4 +39,5 @@ app.post("/api/family", userCtrl.addFamily)
 app.post("/api/restaurants", userCtrl.addRestaurants)
 
 //skills
-app.get("/api/skills")
+app.get("/api/skills", skillsCtrl.getSkills)
+app.post("/api/skills",skillsCtrl.addSkill);
